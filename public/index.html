@@ -1,0 +1,43 @@
+<!doctype html>
+<html>
+	<head>
+		<title>Notes</title>
+		<link href="index.css" rel="stylesheet" type="text/css">
+	</head>
+	<body>
+
+		<div class="navbar">
+			<div class="navleft">
+				HOME
+			</div>
+			<div class="navright">
+				<a id="navlogin" href=''>LOGIN/SIGNUP</a>
+			</div>
+		</div>
+
+		<div class="intro">
+			<div>
+				Welcome!
+			</div>
+			<button id='btnlogin'>Log in/ Sign up to get started</button>
+		</div>
+
+		<div id="auth">
+				<div id="errors">
+				</div>
+				<form id="login">
+					<div>Email:<input name="email" type="email"/></div>
+					<div>Password:<input name="password" type="password"/></div>
+					<a href='' id='showreg'>Register here</a>
+				</form>
+				<form id="signup">
+					<div>Email:<input name="email" type="email"/></div>
+					<div>Password:<input name="password1" type="password"/></div>
+					<div>Enter Password again:<input name="password2" type="password"/></div>
+					<a href='' id='showlogin'>Already have an account? Log in here</a>
+				</form>
+		</div>
+
+		<script src="index.js" type="text/javascript"></script>
+	</body>
+</html>
