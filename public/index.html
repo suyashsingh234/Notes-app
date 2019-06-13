@@ -3,6 +3,13 @@
 	<head>
 		<title>Notes</title>
 		<link href="index.css" rel="stylesheet" type="text/css">
+
+		<!--jquery-->
+			<script
+	  src="https://code.jquery.com/jquery-3.4.1.min.js"
+	  integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+	  crossorigin="anonymous"></script>
+
 	</head>
 	<body>
 
@@ -25,15 +32,17 @@
 		<div id="auth">
 				<div id="errors">
 				</div>
-				<form id="login">
+				<form id="login" action='/users/login' method='get'>
 					<div>Email:<input name="email" type="email"/></div>
 					<div>Password:<input name="password" type="password"/></div>
+					<div><button type='submit'id='loginbtn' class='formbtn'>Submit</button></div>
 					<a href='' id='showreg'>Register here</a>
 				</form>
-				<form id="signup">
+				<form id="signup" action='/users/signup' method='get'>
 					<div>Email:<input name="email" type="email"/></div>
 					<div>Password:<input name="password1" type="password"/></div>
 					<div>Enter Password again:<input name="password2" type="password"/></div>
+					<div><button type='submit' id='signupbtn' class='formbtn'>Submit</button></div>
 					<a href='' id='showlogin'>Already have an account? Log in here</a>
 				</form>
 		</div>

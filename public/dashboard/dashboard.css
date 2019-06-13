@@ -1,0 +1,45 @@
+html,body{
+	width:100%;
+	height:100%;
+	overflow: hidden;
+}
+.navbar{
+	position: absolute;
+	top:0%;
+	left:0%;
+	width:100%;
+	height:6vw;
+	font-size: 5vw;
+	background-color: #d1e1fc;
+}
+.navleft{
+	position: absolute;
+	left:1%;
+}
+.navright{
+	position: absolute;
+	right:1%;
+}
+.dropdown{
+	padding: 1px;
+	background-color: #895a0d;
+	color:#ffffff;
+}
+.dropdowncontent{
+	width:100%;
+	height:100%;
+	padding:20px;
+	font-size:75%;
+	background-color: #e8ecf2;
+	display: none;
+}
+.dropdown:hover + .dropdowncontent{
+	display: block;
+}
+.dropdowncontent:hover{
+	display: block;
+}
+
+#notesarea{
+	overflow: scroll;
+}

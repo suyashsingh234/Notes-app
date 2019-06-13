@@ -59,6 +59,10 @@ body{
 	background-color: #ff9bbe;
 	display: none;
 }
+.formbtn{
+	font-size: 2vw;
+	margin:10px;
+}
 input{
 	font-size: 2vw;
 	margin:10px;
