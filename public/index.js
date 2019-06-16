@@ -39,18 +39,3 @@ document.addEventListener('keyup',function(event){
 		}
 	}
 });
-
-//ajax
-const submitbtns=[document.getElementById('loginbtn'),document.getElementById('signupbtn')];
-submitbtns.forEach(function(element){
-	element.addEventListener('click',function(event){
-		event.preventDefault();
-		$.ajax({
-			url:'/users/signup',
-			type:'GET',
-			success:function(data){
-				$('#errors').append('<div>'+data+'</div>');
-			}
-		});
-	});
-});
