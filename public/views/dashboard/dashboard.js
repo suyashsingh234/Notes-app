@@ -2,21 +2,23 @@ window.onload=function(){
 
 	const params = new Map(document.location.search.slice(1).split('&').map(kv => kv.split('=')));
 	const email=params.get('email');
-	var prev=new Array(10000).fill('');
 
+function update(){
 var linote=document.getElementsByClassName('note');
-var i=0;
-for(;i<linote.length;i++)
-	linote[i].addEventListener('click',function(){
-		linote[i].contentEditable='true';
-		prev[i]=linote[i].textContent;
-		linote[i].setAttribute('name',i);
+for(let j=0;j<linote.length;j++)
+	linote[j].addEventListener('click',function(){
+		console.log(j);
+		linote[j].contentEditable='true';
+		linote[j].setAttribute('name',linote[j].textContent);
 	});
+}
+update();
 
 	var delbtns=document.getElementsByClassName('deletenote');
-	for(let i=0;i<delbtns.length;i++)
-		delbtns[i].addEventListener('click',function(){
-			var deldata=this.parentElement.note.textContent;
+	for(let j=0;j<delbtns.length;j++)
+		delbtns[j].addEventListener('click',function(){
+
+			var deldata=this.parentNode.querySelector('.note').textContent;
 
 			var xhr = new XMLHttpRequest();
 			xhr.open("POST", '/users/delete', true);
@@ -26,21 +28,24 @@ for(;i<linote.length;i++)
 			    deldata:deldata
 			}));
 
+			document.getElementById('notesarea').removeChild(this.parentElement);
+			update();
+
 		});
 
 		var savebtns=document.getElementsByClassName('savenote');
-		for(let i=0;i<savebtns.length;i++)
+		for(let j=0;j<savebtns.length;j++)
 		{
-			savebtns[i].addEventListener('click',function(){
+			savebtns[j].addEventListener('click',function(){
 				var xhr = new XMLHttpRequest();
 				xhr.open("POST", '/users/update', true);
 				xhr.setRequestHeader('Content-Type', 'application/json');
 				xhr.send(JSON.stringify({
 						email:email,
-				    find:prev[i],
-						data:savebtns[i].parentNode.querySelector('.note').textContent
+				    find:savebtns[j].parentElement.querySelector('.note').getAttribute('name'),
+						data:savebtns[j].parentElement.querySelector('.note').textContent
 				}));
-				prev='';
+				savebtns[j].parentElement.querySelector('.note').setAttribute('name',savebtns[j].parentElement.querySelector('.note').textContent);
 			});
 		}
 
@@ -61,9 +66,7 @@ for(;i<linote.length;i++)
 		div.appendChild(save);
 		li.addEventListener('click',function(){
 			li.contentEditable='true';
-			prev[i]=li.textContent;
-			li.setAttribute('name',i);
-			i++;
+			li.setAttribute('name',li.textContent);
 		});
 		save.addEventListener('click',function(){
 				var xhr = new XMLHttpRequest();
@@ -71,9 +74,10 @@ for(;i<linote.length;i++)
 				xhr.setRequestHeader('Content-Type', 'application/json');
 				xhr.send(JSON.stringify({
 						email:email,
-				    find:prev[parseInt(save.parentNode.querySelector('.note').getAttribute('name'))],
-						data:save.parentNode.querySelector('.note').textContent
+				    find:save.parentElement.querySelector('.note').getAttribute('name'),
+						data:save.parentElement.querySelector('.note').textContent
 				}));
+				save.parentElement.querySelector('.note').setAttribute('name',savebtns.parentElement.querySelector('.note').textContent);
 		});
 
 
@@ -86,6 +90,10 @@ for(;i<linote.length;i++)
 					email:email,
 			    deldata:deldata
 			}));
+
+			document.getElementById('notesarea').removeChild(this.parentElement);
+			update();
+
 		});
 
 		document.getElementById('notesarea').prepend(div);

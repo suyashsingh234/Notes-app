@@ -47,8 +47,9 @@ app.get('/',function(req,res){
 		res.sendFile(publicpath+'/home/index.html');
 });
 
-app.get('/dashboard',function(req,res){
-	const notes=require('./database/getnotes.js')(req.query.email);
+app.get('/dashboard',async function(req,res){
+	var notes=await require('./database/getnotes.js')(decodeURIComponent(req.query.email));
+	//console.log('notes->'+notes);
 	res.render(publicpath+'/views/dashboard/dashboard.pug',{notes:notes})
 }
 );
