@@ -2,9 +2,20 @@ doctype html
 html
 	head
 		title Dashboard
-		(link href='dashboard.css' rel='stylesheet' type='text/css')
+		script(src='/views/dashboard/dashboard.js')
+		link(rel="stylesheet", href="/views/dashboard/dashboard.css")
 	body
-		div .navbar
-
-
-		(script src='dashboard.js' type='text/javascript')
+		div.navbar
+			div.navleft
+				div Your notes
+			div.navright
+				div.logout
+					a(href='/logout') Logout
+		ul#notesarea
+			each note in notes
+					div
+						li.note=note
+						button.deletenote delete
+						button.savenote save
+					<br>
+		button#addnote +

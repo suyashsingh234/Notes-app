@@ -4,7 +4,7 @@ html,body{
 		overflow: hidden;
 }
 body{
-	background-image: url('images/notepad.jpeg');
+	background-image: url('../images/notepad.jpeg');
 	background-size: cover;
   background-repeat: no-repeat;
   background-position:center center;

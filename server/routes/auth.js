@@ -34,7 +34,11 @@ module.exports=function(passport){
 
 	//log in local Strategy
 router.post('/users/login',
-  passport.authenticate('local', { successRedirect: '/dashboard',
-                                   failureRedirect: '/' }));
+  passport.authenticate('local',{failureRedirect: '/errors/login'}),
+  function(req, res) {
+			const query=encodeURIComponent(req.body.email);
+			res.redirect('/dashboard?email='+query);
+  });
+
 	return router;
 }

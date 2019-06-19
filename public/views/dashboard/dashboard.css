@@ -8,38 +8,62 @@ html,body{
 	top:0%;
 	left:0%;
 	width:100%;
-	height:6vw;
+	height:20%;
 	font-size: 5vw;
+	line-height: 100%;
 	background-color: #d1e1fc;
 }
 .navleft{
 	position: absolute;
-	left:1%;
+	left:0%;
+	height:100%;
+	width:40%;
+	text-align: left;
 }
 .navright{
 	position: absolute;
-	right:1%;
-}
-.dropdown{
-	padding: 1px;
-	background-color: #895a0d;
-	color:#ffffff;
-}
-.dropdowncontent{
-	width:100%;
+	right:0%;
 	height:100%;
-	padding:20px;
-	font-size:75%;
-	background-color: #e8ecf2;
-	display: none;
+	width:40%;
+	text-align: right;
 }
-.dropdown:hover + .dropdowncontent{
-	display: block;
+div{
+	position: relative;
+	height:20%;
+	width:100%;
+	margin:10px;
 }
-.dropdowncontent:hover{
-	display: block;
+li{
+	position: absolute;
+	left:0%;
+	width:75%;
+	height:100%
 }
-
-#notesarea{
-	overflow: scroll;
+.savenote,.deletenote{
+	height: 100%;
+	width:12.5%;
+}
+.savenote{
+	position: absolute;
+	right:0%;
+}
+.deletenote{
+	position: absolute;
+	right: 12.5%;
+}
+#notesarea
+{
+	position: absolute;
+	top:20%;
+	left:0%;
+	height: 80%;
+	width:100%;
+	overflow-y: scroll;
+}
+#addnote{
+	position: fixed;
+	right:5%;
+	bottom: 5%;
+	font-size: 16px;
+	background-color: red;
 }
