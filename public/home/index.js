@@ -1,41 +1,30 @@
+const signup=document.getElementById('signup');
+const login=document.getElementById('login');
+
+const signupForm=document.getElementById('signupForm');
+const loginForm=document.getElementById('loginForm');
+
+loginForm.style.display='none';
+
+const hidecolor='#f2efed';
+const showcolor='#ffffff';
+signup.style.backgroundColor=showcolor;
+login.style.backgroundColor=hidecolor;
 
 
-document.getElementById('btnlogin').addEventListener('click',function(){
-	document.getElementById('navlogin').click();
+signup.addEventListener('click',()=>{
+	signup.style.backgroundColor=showcolor;
+	login.style.backgroundColor=hidecolor;
+
+	loginForm.style.display='none';
+	signupForm.style.display='block';
+
 });
 
-document.getElementById('navlogin').addEventListener('click',function(event){
-	event.preventDefault();
-	document.getElementById('auth').style.display='block';
-	document.getElementById('login').style.display='none';
-	document.getElementById('signup').style.display='block';
-	var temp=document.querySelectorAll("body > div:not(#auth)");
-	for(let i=0;i<temp.length;i++)
-		temp[i].classList.add('blur');
-});
+login.addEventListener('click',()=>{
+	signup.style.backgroundColor=hidecolor;
+	login.style.backgroundColor=showcolor;
 
-document.getElementById('showreg').addEventListener('click',function(event){
-	event.preventDefault();
-	document.getElementById('login').style.display='none';
-	document.getElementById('signup').style.display='block';
-});
-
-document.getElementById('showlogin').addEventListener('click',function(event){
-	event.preventDefault();
-	document.getElementById('signup').style.display='none';
-	document.getElementById('login').style.display='block';
-});
-
-document.addEventListener('keyup',function(event){
-	if(event.keycode==13)
-	{
-		event.preventDefault();
-		if(document.getElementById('signup').style.display=='none')
-		{
-			document.getElementById('loginbtn').click();
-		}
-		else {
-			document.getElementById('signupbtn').click();
-		}
-	}
+	loginForm.style.display='block';
+	signupForm.style.display='none';
 });

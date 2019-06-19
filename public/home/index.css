@@ -1,72 +1,61 @@
 html,body{
-		width:100%;
-		height:100%;
-		overflow: hidden;
-}
-body{
-	background-image: url('../images/notepad.jpeg');
-	background-size: cover;
-  background-repeat: no-repeat;
-  background-position:center center;
-}
-.navbar{
-	position: absolute;
-	top:0%;
-	left:0%;
+	background-color: #dbd7d4;
 	width:100%;
-	height:6vw;
-	font-size: 5vw;
-	display: block;
-	background-color: #d1e1fc;
+	height:100%;
+	overflow: hidden;
 }
-.navbar .navleft
-{
-	position:absolute;
-	left:1%;
-	display: inline-block;
-}
-.navbar .navright
-{
+.area{
 	position: absolute;
-	right:1%;
+	left:25%;
+	top:10%;
+	width:50%;
+	height:80%;
 	display: inline-block;
+}
+#signup,#login{
+		position: absolute;
+		top:0%;
+		font-size: 3vw;
+		text-align: center;
+		width:45%;
+		height:20%;
+		border: 1px solid black;
+		border-radius: 5px;
+}
+#signup{
+	position: absolute;
+	left:5%;
+	box-shadow: 5px;
+}
+#login{
+	position: absolute;
+	left:50%;
+}
+.area .showarea{
+	position: absolute;
+	left:0%;
+	top:20%;
+	width:100%;
+	height:90%;
+	background-color: #ffffff;
+	 border-radius: 5%;
 }
 
-.intro{
-	font-size:5vw;
-	text-align: center;
+#loginForm,#signupForm{
+	font-size: 3vw;
 	position: absolute;
-	top:20%;
-	left:25%;
-	width:50%;
-	height:50%;
-	background-color: #fff1ba;
+	top:0%;
+	left:10%;
+	padding:20px;
 }
-.intro button{
-	font-size: 50%;
-	height:25%;
-	width:75%;
-	background-color:#6df278;
+
+#loginForm>*,#signupForm>*{
+	padding:10px;
 }
-#auth{
-	font-size:3vw;
-	text-align: center;
-	position: absolute;
-	top:20%;
-	left:12.5%;
-	width:75%;
-	height:40%;
-	background-color: #ff9bbe;
-	display: none;
+
+input,button{
+	font-size: 3vw;
 }
-.formbtn{
-	font-size: 2vw;
-	margin:10px;
-}
-input{
-	font-size: 2vw;
-	margin:10px;
-}
-.blur{
-	filter:blur(5px);
+button{
+	background-color:
 }
