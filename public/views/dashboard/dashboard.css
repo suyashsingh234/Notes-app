@@ -1,8 +1,9 @@
 html,body{
 	width:100%;
 	height:100%;
-	overflow-x: hidden;
-	overflow-y: scroll;
+	color:#ffffff;
+	background-color:#000000;
+	overflow: hidden;
 }
 .navbar{
 	position: absolute;
@@ -41,8 +42,10 @@ li{
 	left:0%;
 	width:75%;
 	height:100%;
+	background-color: #7fc68e;
 	margin:0;
 	padding:0;
+	border-radius: 5px;
 }
 .savenote,.deletenote{
 	height: 100%;
@@ -65,6 +68,8 @@ li{
 	width:100%;
 	margin:0;
 	padding:0;
+	overflow-x: hidden;
+	overflow-y: scroll;
 }
 #addnote{
 	position: fixed;
