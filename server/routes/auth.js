@@ -1,7 +1,7 @@
 const express=require('express');
 const router=express.Router();
 const passport=require('passport');
-const bcrypt=require('bcrypt');
+const bcrypt=require('bcryptjs');
 const collection=require('../database/models.js').collection;
 
 module.exports=function(passport){
